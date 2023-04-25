@@ -17,6 +17,11 @@ app.get('/scape', async (req, res) => {
         //extract desired data from html
         const title = $('title').text()
         const metaDescription = $('meta[name="description"]').attr('content')
+        const paragraphs = []
+
+        $('p').each(function() {
+            paragraphs.push($(this).text().trim())
+        })
 
         res.json({
             title,
