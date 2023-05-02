@@ -1,10 +1,12 @@
 const express = require('express')
 const axios = require('axios')
 const cheerio = require('cheerio')
+const cors = require('cors')
 
 const app = express()
+app.use(cors())
 
-app.get('/scape', async (req, res) => {
+app.get('/scrape', async (req, res) => {
     try {
         const url = req.query.url
 
@@ -25,7 +27,8 @@ app.get('/scape', async (req, res) => {
 
         res.json({
             title,
-            metaDescription
+            metaDescription,
+            paragraphs
         })
     } catch (err) {
         console.error(err)
@@ -34,6 +37,6 @@ app.get('/scape', async (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Server started on port 3000')
+app.listen(4000, () => {
+    console.log('Server started on port 4000')
 })
