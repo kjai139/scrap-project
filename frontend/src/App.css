@@ -1,3 +1,10 @@
+:root{
+  --btnColor: lightgreen;
+  --btnRadius: 8px;
+}
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +14,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: center;
+  
   align-items: center;
 }
 
@@ -15,4 +22,59 @@
 .App {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  gap: 2rem;
+  max-width: 1000px;
+}
+
+.resultDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.scrap-form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+#url-input {
+  width: 400px;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+.scrap-btn {
+  padding: 3px 5px 3px 5px;
+  border-radius: var(--btnRadius);
+  background-color: var(--btnColor);
+}
+
+.para-btns {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: var(--btnRadius);
+  padding: 10px;
+  border: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.para-btns:hover {
+  cursor: pointer;
+}
+
+.pagePara-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-para-div {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
